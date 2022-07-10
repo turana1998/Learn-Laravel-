@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\AnnouncementController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\SettingsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +28,9 @@ Auth::routes();
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('/home', [HomeController::class, 'index'])->name('admin_home');
     Route::resource('categories', CategoryController::class);
+    Route::resource('settings', SettingsController::class);
+    Route::resource('about', AboutController::class);
+    Route::resource('announcement', AnnouncementController::class);
 });
 
 

@@ -42,6 +42,7 @@
 @include('admin.layouts.footer')
 </div>
 </main>
+<script src="{{asset('admin/js/plugins/datatables.js')}}"></script>
 <script src="{{asset('admin/js/core/popper.min.js')}}"></script>
 <script src="{{ asset('admin/js/core/bootstrap.min.js')}}"></script>
 <script src="{{ asset('admin/js/plugins/perfect-scrollbar.min.js')}}"></script>
@@ -51,6 +52,15 @@
 <script src="{{ asset('admin/js/plugins/jkanban/jkanban.js')}}"></script>
 <script src="{{ asset('admin/js/plugins/chartjs.min.js')}}"></script>
 <script src="{{ asset('admin/js/plugins/world.js')}}"></script>
+<script type="text/javascript">
+    const dataTableBasic = new simpleDatatables.DataTable(
+        "#datatable-basic",
+        {
+            searchable: false,
+            fixedHeight: true
+        }
+    );
+</script>
 <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
 

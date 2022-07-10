@@ -9,8 +9,8 @@
                         <div class="card h-100">
                             <div class="card-header pb-0 p-3">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="mb-0">Kateqoriyalar</h6>
-                                    <a href="{{ route('categories.create') }}" class="btn btn-primary">Add</a>
+                                    <h6 class="mb-0">Elanlar</h6>
+                                    <a href="{{ route('announcement.create') }}" class="btn btn-primary">Add</a>
                                 </div>
                             </div>
                             <div class="card-body pb-0 p-3 mt-4">
