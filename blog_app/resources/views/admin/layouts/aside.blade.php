@@ -52,7 +52,7 @@
                 <div class="collapse  " id="dashboardsExamples">
                     <ul class="nav ">
                         <li class="nav-item ">
-                            <a class="nav-link text-white " href="{{ route('settings.index') }}">
+                            <a class="nav-link text-white " href="{{ route('settings.edit',$common_settings->id) }}">
                                 <span class="sidenav-mini-icon"> S </span>
                                 <span class="sidenav-normal  ms-2  ps-1"> Settings </span>
                             </a>

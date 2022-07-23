@@ -16,7 +16,11 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('title',50);
+            $table->string('title_en',50);
+            $table->string('title_ru',50);
             $table->string('description',150);
+            $table->string('description_en',50);
+            $table->string('description_ru',50);
             $table->string('keywords',50);
             $table->string('logo');
             $table->string('facebook');
@@ -25,6 +29,8 @@ return new class extends Migration
             $table->string('linkedin');
             $table->integer('phone');
             $table->string('location');
+            $table->string('location_en',50);
+            $table->string('location_ru',50);
             $table->string('email');
             $table->timestamps();
         });

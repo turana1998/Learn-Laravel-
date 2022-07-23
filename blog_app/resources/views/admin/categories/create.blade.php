@@ -9,7 +9,7 @@
                         <div class="card h-100">
                             <div class="card-header pb-0 p-3">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="mb-0">Kateqoriya Yarata</h6>
+                                    <h6 class="mb-0">Kateqoriya Yarat</h6>
                                     <button type="button"
                                             class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center"
                                             data-bs-toggle="tooltip" data-bs-placement="bottom" title=""
@@ -19,29 +19,23 @@
                                 </div>
                             </div>
                             <div class="card-body pb-0 p-3 mt-4">
-                                <form>
+                                <form
+                                   method="post"
+                                   action="{{route('categories.store')}}">
+                                    @csrf
                                     <div class="input-group input-group-outline my-3">
-                                        <label class="form-label">Text</label>
-                                        <input type="text" class="form-control">
+                                        <label class="form-label">Title</label>
+                                        <input type="text" name="title" class="form-control">
                                     </div>
                                     <div class="input-group input-group-outline my-3">
-                                        <label class="form-label">Search</label>
-                                        <input type="text" class="form-control">
+                                        <label class="form-label">Title en</label>
+                                        <input type="text" name="title_en" class="form-control">
                                     </div>
                                     <div class="input-group input-group-outline my-3">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" class="form-control">
+                                        <label class="form-label">Title ru</label>
+                                        <input type="text" name="title_ru" class="form-control">
                                     </div>
-                                    <div class="input-group input-group-outline my-3">
-                                        <label class="form-label">Url</label>
-                                        <input type="url" class="form-control">
-                                    </div>
-                                    <div class="input-group input-group-outline my-3">
-                                        <label class="form-label">Phone</label>
-                                        <input type="tel" class="form-control">
-                                    </div>
-
-                                    <button type="button" class="btn btn-primary">Save</button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
                                 </form>
                             </div>
 
