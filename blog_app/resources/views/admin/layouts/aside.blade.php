@@ -44,7 +44,8 @@
             </li>
             <hr class="horizontal light mt-0">
             <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#dashboardsExamples" class="nav-link text-white active"
+                <a data-bs-toggle="collapse" href="#dashboardsExamples" class="nav-link text-white
+                @if(Route::is('settings.edit') || Route::is('about.index')) active @endif"
                    aria-controls="dashboardsExamples" role="button" aria-expanded="false">
                     <i class="material-icons-round opacity-10">dashboard</i>
                     <span class="nav-link-text ms-2 ps-1">Ümumi</span>
@@ -67,14 +68,24 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a  href="{{ route('categories.index') }}" class="nav-link text-white active"
+                <a  href="{{ route('categories.index') }}" class="nav-link text-white
+                 @if(Route::is('categories.index')) active @endif"
                    aria-controls="dashboardsExamples" role="button" aria-expanded="false">
                     <i class="material-icons-round opacity-10">receipt_long</i>
                     <span class="nav-link-text ms-2 ps-1">Kateqoriyalar</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a  href="{{ route('announcement.index') }}" class="nav-link text-white active"
+                <a  href="{{ route('subcategories.index') }}" class="nav-link text-white
+                 @if(Route::is('subcategories.index')) active @endif"
+                    aria-controls="dashboardsExamples" role="button" aria-expanded="false">
+                    <i class="material-icons-round opacity-10">receipt_long</i>
+                    <span class="nav-link-text ms-2 ps-1">SubKateqoriyalar</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a  href="{{ route('announcement.index') }}" class="nav-link text-white
+                  @if(Route::is('announcement.index')) active @endif"
                     aria-controls="dashboardsExamples" role="button" aria-expanded="false">
                     <i class="material-icons-round opacity-10">shopping_basket</i>
                     <span class="nav-link-text ms-2 ps-1">Elanlar</span>

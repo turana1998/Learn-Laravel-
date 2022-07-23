@@ -9,8 +9,8 @@
                         <div class="card h-100">
                             <div class="card-header pb-0 p-3">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="mb-0">Kateqoriyalar</h6>
-                                    <a href="{{ route('categories.create') }}" class="btn btn-primary">Add</a>
+                                    <h6 class="mb-0">Alt Kateqoriyalar</h6>
+                                    <a href="{{ route('subcategories.create') }}" class="btn btn-primary">Add</a>
                                 </div>
                             </div>
                             @if(Session::has('success'))
@@ -28,17 +28,21 @@
                                                 Slug
                                             </th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Category
+                                            </th>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 Actions
                                             </th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($categories as $category)
+                                        @foreach($subcategories as $subcategory)
                                         <tr>
-                                            <td class="text-sm font-weight-normal">{{$category->title}}</td>
-                                            <td class="text-sm font-weight-normal">{{$category->slug}}</td>
+                                            <td class="text-sm font-weight-normal">{{$subcategory->title}}</td>
+                                            <td class="text-sm font-weight-normal">{{$subcategory->slug}}</td>
+                                            <td class="text-sm font-weight-normal">{{$subcategory->category->title}}</td>
                                             <td class="text-sm font-weight-normal">
-                                                <form action="{{route('categories.destroy',$category->id)}}"
+                                                <form action="{{route('subcategories.destroy',$subcategory->id)}}"
                                                 method="POST">
                                                       @csrf
                                                       @method('delete')
@@ -46,7 +50,7 @@
                                                       onclick="confirm('Are you sure ?')">Delete</button>
 
                                                 </form>
-                                                <a href="{{route('categories.edit',$category->id)}}" class="btn btn-primary">edit</a>
+                                                <a href="{{route('subcategories.edit',$subcategory->id)}}" class="btn btn-primary">edit</a>
                                             </td>
                                         </tr>
                                         @endforeach
